@@ -14,6 +14,7 @@
 
 import NIO
 import NIOHTTP1
+import Network
 
 public final class HTTPClientCopyingDelegate: HTTPClientResponseDelegate {
     public typealias Response = Void
@@ -30,5 +31,14 @@ public final class HTTPClientCopyingDelegate: HTTPClientResponseDelegate {
 
     public func didFinishRequest(task: HTTPClient.Task<Void>) throws {
         return ()
+    }
+}
+
+internal extension String {
+    var isIPAddress: Bool {
+        if IPv4Address(self) != nil || IPv6Address(self) != nil {
+            return true
+        }
+        return false
     }
 }
