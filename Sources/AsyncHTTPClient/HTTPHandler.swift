@@ -15,7 +15,6 @@
 import Foundation
 import NIO
 import NIOConcurrencyHelpers
-import NIOFoundationCompat
 import NIOHTTP1
 import NIOSSL
 
